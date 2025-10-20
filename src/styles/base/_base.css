@@ -1,0 +1,69 @@
+* {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    /* Color de texto base cambiado a un gris claro */
+    color: #cbd5e1; /* slate-300 */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+
+@layer utilities {
+  /* ... (el resto de las utilidades pueden quedar igual) ... */
+}
+
+/* Custom scrollbar para Dark Mode */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b; /* Color de fondo oscuro */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #a855f7);
+  border-radius: 6px;
+  border: 2px solid #1e293b; /* Borde que coincide con el fondo */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #4f46e5, #9333ea);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6366f1 #1e293b;
+}
+
+/* Selection color para Dark Mode */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #f1f5f9; /* Texto claro al seleccionar */
+}
+
+::-moz-selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #f1f5f9;
+}
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .section-spacing {
+          padding: 3rem 0;
+        }
+        
+        .hero-section {
+          min-height: 100svh;
+        }
+      }
