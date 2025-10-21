@@ -9,6 +9,10 @@
 @import '../styles/components/_contact.css';
 @import '../styles/components/_tech-stack.css';
 @import '../styles/components/_experience.css';
+@import '../styles/components/_projects-section.css';
+@import '../styles/components/_certifications.css';
+
+@import '../styles/contact/_contact-page.css';
 
 
 @tailwind base;

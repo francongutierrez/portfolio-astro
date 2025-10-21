@@ -1,0 +1,31 @@
+  /*
+    Clase para el contenedor del formulario.
+    Define los estilos para modo claro y oscuro.
+  */
+  .contact-form {
+    @apply flex flex-col gap-4 rounded-lg p-6 shadow-sm transition-colors duration-300;
+    
+    /* Modo Claro */
+    @apply bg-white border border-slate-200;
+    
+    /* Modo Oscuro */
+    @apply dark:bg-slate-800/50 dark:border-slate-800;
+  }
+
+  /*
+    Clase para los campos de texto (input, textarea).
+    También con estilos para ambos modos.
+  */
+  .form-input {
+    @apply w-full rounded-md border bg-slate-50 p-3 text-slate-800 placeholder:text-slate-400 transition-colors duration-300 focus:border-blue-500 focus:ring-blue-500;
+    
+    /* Modo Oscuro */
+    @apply dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:placeholder:text-slate-500;
+  }
+
+  /*
+    Clase para el botón de envío.
+  */
+  .submit-btn {
+    @apply rounded-md bg-blue-600 p-3 font-semibold text-white transition-colors duration-300 hover:bg-blue-700 dark:hover:bg-blue-500;
+  }

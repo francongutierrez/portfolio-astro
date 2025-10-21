@@ -5,6 +5,7 @@ import MyHistory from '../components/index/MyHistory.astro';
 import TechStack from '../components/index/TechStack.astro';
 import Experience from '../components/index/Experience.astro';
 import ProjectsSection from '../components/index/ProjectsSection.astro';
+import Certifications from '../components/index/Certifications.astro';
 import Contact from '../components/index/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -15,6 +16,8 @@ import Footer from '../components/Footer.astro';
   <title>Franco Gutierrez — Desarrollador Web & Analista Funcional</title>
   <meta name="description" content="Portfolio de Franco Gutierrez - Técnico en Web, Analista Funcional y Desarrollador con pasión por crear soluciones tecnológicas innovadoras." />
   <link rel="stylesheet" href="/src/styles/global.css" />
+  <link rel="icon" type="image/x-icon" href="/portfolio.ico" />
+  <script src="/src/scripts/index.js" defer></script>
 </head>
   <body class="bg-slate-50 text-slate-600 dark:bg-[#0d1117] dark:text-slate-300 transition-colors duration-300">
     <Header />
@@ -24,6 +27,7 @@ import Footer from '../components/Footer.astro';
       <TechStack />
       <ProjectsSection />
       <Experience />
+      <Certifications />
       <Contact />
     </main>
     <Footer />

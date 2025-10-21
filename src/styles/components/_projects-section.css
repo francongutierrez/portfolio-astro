@@ -1,0 +1,13 @@
+    .project-card {
+      @apply block rounded-2xl border p-6 shadow-sm transition-all duration-300;
+      
+      /* Estilos para MODO CLARO (por defecto) */
+      @apply bg-white border-slate-200;
+
+      /* Estilos para MODO OSCURO */
+      @apply dark:bg-slate-800/50 dark:border-slate-800;
+    }
+
+    .project-card:hover {
+      @apply -translate-y-1 shadow-md dark:shadow-lg dark:border-blue-500;
+    }

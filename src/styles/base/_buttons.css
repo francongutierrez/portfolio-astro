@@ -1,16 +1,13 @@
 /* Buttons */
 .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: white;
-    color: #6366f1;
-    padding: 0.875rem 2rem;
-    border-radius: 0.75rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    @apply inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-lg font-semibold shadow-lg transition-all duration-300 ease-in-out;
+
+    /* Estilos MODO CLARO (por defecto) */
+    @apply dark:bg-indigo-600 dark:text-white dark:hover:-translate-y-0.5 dark:hover:bg-indigo-700 dark:hover:shadow-xl;
+    
+    /* Estilos MODO OSCURO */
+    @apply bg-white text-indigo-600 shadow-2xl shadow-black/25 hover:shadow-2xl;
+
   }
 
   .btn-primary:hover {

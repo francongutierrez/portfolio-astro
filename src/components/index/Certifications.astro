@@ -1,0 +1,76 @@
+---
+import certifications from '../../data/certifications.js';
+
+// Dividimos las certificaciones en páginas de 6
+const CERTS_PER_PAGE = 5;
+const totalPages = Math.ceil(certifications.length / CERTS_PER_PAGE);
+const pages = Array.from({ length: totalPages }, (_, i) => 
+  certifications.slice(i * CERTS_PER_PAGE, (i + 1) * CERTS_PER_PAGE)
+);
+---
+<section id="certifications" class="section-spacing">
+  <div class="max-w-5xl mx-auto px-8">
+    
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="section-title text-slate-900 dark:text-slate-100 mb-0">
+        <span class="icon-emoji">📜</span>
+        Certificaciones y Cursos
+      </h2>
+      
+      <!-- Botones de navegación (desktop) -->
+      <div class="certification-nav hidden sm:flex gap-2">
+        <button id="scroll-left" aria-label="Desplazar a la izquierda" class="nav-button">‹</button>
+        <button id="scroll-right" aria-label="Desplazar a la derecha" class="nav-button">›</button>
+      </div>
+    </div>
+    
+    <!-- Contenedor del carrusel con páginas -->
+    <div id="certifications-slider" class="certifications-container">
+      {pages.map((pageCerts, pageIndex) => (
+        <div class="certification-page" data-page={pageIndex}>
+          <ul class="certification-list">
+            {pageCerts.map(cert => (
+              <li class="certification-item">
+                <a 
+                  href={cert.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="certification-link"
+                >
+                  <div class="certification-content">
+                    <h3 class="certification-title">{cert.title}</h3>
+                    <p class="certification-meta">{cert.issuer} • {cert.year}</p>
+                  </div>
+                  <svg class="certification-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Indicadores de página (mobile y desktop) -->
+    {totalPages > 1 && (
+      <div class="flex justify-center gap-2 mt-4">
+        {Array.from({ length: totalPages }).map((_, i) => (
+          <button 
+            class="page-indicator" 
+            data-page-index={i}
+            aria-label={`Ir a página ${i + 1}`}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  import { initCertificationsSlider } from '../../scripts/certifications-slider';
+  
+  // Inicializar el slider cuando el DOM esté listo
+  initCertificationsSlider();
+</script>

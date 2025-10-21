@@ -1,0 +1,69 @@
+.certifications-container {
+  @apply flex overflow-x-hidden scroll-smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.certification-page {
+  @apply flex-shrink-0 w-full;
+  scroll-snap-align: start;
+}
+
+.certification-list {
+  @apply list-none p-0 m-0 space-y-2;
+}
+
+.certification-item {
+  @apply rounded-lg border transition-all duration-300;
+  @apply bg-white border-slate-200;
+  @apply dark:bg-slate-800/50 dark:border-slate-700;
+}
+
+.certification-item:hover {
+  @apply border-slate-300 dark:border-slate-600 shadow-sm;
+}
+
+.certification-link {
+  @apply flex items-center justify-between gap-4 p-4 no-underline;
+  @apply text-slate-900 dark:text-slate-100;
+}
+
+.certification-content {
+  @apply flex-1;
+}
+
+.certification-title {
+  @apply font-semibold text-base mb-1;
+  @apply text-slate-900 dark:text-slate-100;
+}
+
+.certification-meta {
+  @apply text-sm text-slate-600 dark:text-slate-400;
+}
+
+.certification-arrow {
+  @apply flex-shrink-0 opacity-0 -translate-x-2 transition-all duration-300;
+  @apply text-slate-400 dark:text-slate-500;
+}
+
+.certification-link:hover .certification-arrow {
+  @apply opacity-100 translate-x-0;
+  @apply text-slate-600 dark:text-slate-300;
+}
+
+/* Indicadores de página */
+.page-indicator {
+  @apply w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 transition-all duration-300;
+}
+
+.page-indicator.active {
+  @apply w-8 bg-slate-600 dark:bg-slate-400;
+}
+
+.page-indicator:hover {
+  @apply bg-slate-400 dark:bg-slate-500;
+}
+
+/* Botones de navegación */
+.nav-button:disabled {
+  @apply opacity-30 cursor-not-allowed;
+}
