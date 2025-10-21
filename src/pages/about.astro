@@ -1,25 +1,25 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
 ---
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale-1.0" />
   <title>Sobre mí — Franco Gutierrez</title>
   <link rel="stylesheet" href="/src/styles/global.css" />
 </head>
-<body>
+<body class="bg-slate-50 text-slate-600 dark:bg-[#0d1117] dark:text-slate-400 transition-colors duration-300">
   <Header />
-  <main class="max-w-3xl mx-auto p-8">
-    <h1 class="text-3xl font-bold mb-4">Sobre mí</h1>
-    <p class="text-gray-700 mb-4">
+  <main class="max-w-3xl mx-auto p-8 section-spacing">
+    <h1 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Sobre mí</h1>
+    <p class="mb-4 text-lg text-slate-700 dark:text-slate-300">
       Soy Técnico Universitario en Web con formación previa en Psicología y una fuerte vocación por el mundo tecnológico.
       Me desempeño como Analista Funcional y trabajo en tareas como relevamiento, documentación, pruebas y soporte.
     </p>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">Habilidades</h2>
-    <ul class="list-disc list-inside text-gray-700">
+    <h2 class="text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white">Habilidades</h2>
+    <ul class="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
       <li>HTML, CSS, JavaScript</li>
       <li>PHP (CodeIgniter, Laravel)</li>
       <li>SQL (Oracle, MySQL)</li>
@@ -28,8 +28,8 @@ import Footer from '../components/Footer.astro';
       <li>Java, Python, Android Studio</li>
     </ul>
 
-    <h2 class="text-2xl font-semibold mt-6 mb-2">Objetivos</h2>
-    <p class="text-gray-700">Seguir creciendo como desarrollador y analista, aportando valor en equipos interdisciplinarios y participando en proyectos innovadores.</p>
+    <h2 class="text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-white">Objetivos</h2>
+    <p class="text-lg text-slate-700 dark:text-slate-300">Seguir creciendo como desarrollador y analista, aportando valor en equipos interdisciplinarios y participando en proyectos innovadores.</p>
   </main>
   <Footer />
 </body>

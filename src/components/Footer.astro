@@ -1,14 +1,19 @@
 ---
+// src/components/Footer.astro
 ---
-<footer class="mt-12 bg-white border-t">
-  <div class="max-w-5xl mx-auto p-6 text-sm text-gray-600 flex flex-col sm:flex-row sm:justify-between">
+<footer class="mt-12 bg-white border-t border-slate-200 dark:bg-slate-900 dark:border-slate-800 transition-colors duration-300">
+  <div class="max-w-5xl mx-auto p-6 text-sm text-gray-600 dark:text-slate-400 flex flex-col sm:flex-row sm:justify-between">
     <div>
-      © 2025 Franco Gutierrez
-      <div class="mt-2">francogutierrez04@gmail.com</div>
+      © {new Date().getFullYear()} Franco Gutierrez
+      <div class="mt-2">
+        <a href="mailto:francogutierrez04@gmail.com" class="hover:underline hover:text-blue-500">
+          francogutierrez04@gmail.com
+        </a>
+      </div>
     </div>
     <div class="mt-4 sm:mt-0">
-      <a href="https://github.com/francongutierrez" target="_blank" class="mr-4 hover:underline">GitHub</a>
-      <a href="https://www.linkedin.com/in/francongutierrez/" target="_blank" class="hover:underline">LinkedIn</a>
+      <a href="https://github.com/francongutierrez" target="_blank" rel="noopener" class="mr-4 hover:underline hover:text-blue-500">GitHub</a>
+      <a href="https://www.linkedin.com/in/francongutierrez/" target="_blank" rel="noopener" class="hover:underline hover:text-blue-500">LinkedIn</a>
     </div>
   </div>
 </footer>

@@ -1,10 +1,10 @@
 @import '../styles/base/_base.css';
+@import '../styles/base/_cards.css';
+@import '../styles/base/_buttons.css';
 
 @import '../styles/components/_hero.css';
 @import '../styles/components/_floating-shapes.css';
-@import '../styles/components/_buttons.css';
 @import '../styles/components/_section-spacing.css';
-@import '../styles/components/_cards.css';
 @import '../styles/components/_badges.css';
 @import '../styles/components/_contact.css';
 @import '../styles/components/_tech-stack.css';
@@ -15,5 +15,3 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* ... (el resto de los estilos pueden quedar igual) ... */
