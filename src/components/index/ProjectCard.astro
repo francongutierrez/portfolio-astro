@@ -1,0 +1,29 @@
+---
+const { title, description, link } = Astro.props;
+---
+<!-- 
+  AQUÍ ESTÁ EL CAMBIO:
+  Quitamos las clases de estilo como 'bg-white', 'border', 'shadow-sm', etc.,
+  y las reemplazamos con la única clase 'project-card'.
+  Esta clase ya tiene todos los estilos para modo claro y oscuro en tu archivo CSS.
+-->
+<a href={link} target="_blank" rel="noopener" class="project-card block">
+
+  <!-- También actualizamos los colores del texto para que cambien en modo oscuro -->
+  <h3 class="font-semibold text-lg mb-2 text-slate-800 dark:text-white">{title}</h3>
+  <p class="text-sm text-gray-600 dark:text-slate-400 mb-2">{description}</p>
+  <span class="text-blue-600 dark:text-blue-400 text-sm font-medium">Ver proyecto →</span>
+
+</a>
+
+<style>
+  /* Un pequeño efecto visual extra: la flecha se mueve al pasar el mouse.
+    La transición asegura que el movimiento sea suave.
+  */
+  .project-card span {
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover span {
+    transform: translateX(4px);
+  }
+</style>

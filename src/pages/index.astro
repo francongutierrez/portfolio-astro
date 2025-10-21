@@ -1,5 +1,5 @@
 ---
-import Header from '../components/Header.astro';
+import Header from '../components/global/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import projects from '../data/projects.js';
@@ -111,16 +111,16 @@ import projects from '../data/projects.js';
       </div>
     </section>
 
-    <section class="section-spacing">
-      <div class="max-w-5xl mx-auto px-8">
-        <h2 class="section-title text-slate-100">
-          <span class="icon-emoji">💼</span>
-          Proyectos Destacados
-        </h2>
-        <div class="grid sm:grid-cols-2 gap-6">
-          {projects.map(project => <ProjectCard {...project} />)}
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="py-16">
+        <div class="max-w-5xl mx-auto px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                <span class="mr-2">💼</span> Proyectos Destacados
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+                {projects.map(project => <ProjectCard {...project} />)}
+            </div>
         </div>
-      </div>
     </section>
 
     <section class="section-spacing bg-black/30">

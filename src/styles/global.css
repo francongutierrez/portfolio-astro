@@ -6,6 +6,10 @@
 @import '../styles/components/_section-spacing.css';
 @import '../styles/components/_cards.css';
 @import '../styles/components/_badges.css';
+@import '../styles/components/_contact.css';
+@import '../styles/components/_tech-stack.css';
+@import '../styles/components/_experience.css';
+
 
 @tailwind base;
 @tailwind components;

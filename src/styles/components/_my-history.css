@@ -1,0 +1,12 @@
+  /* Tarjeta de "Mi Historia" - Consolidada */
+  .card-gradient {
+    @apply p-10 rounded-3xl relative overflow-hidden transition-all duration-300;
+    /* Modo Claro */
+    @apply bg-white border border-slate-200 shadow-md;
+    /* Modo Oscuro */
+    @apply dark:bg-[#1e293b] dark:border-[#334155] dark:shadow-lg dark:shadow-black/25;
+  }
+
+  .card-gradient:hover {
+    @apply -translate-y-1 shadow-xl dark:shadow-2xl dark:shadow-black/25;
+  }
