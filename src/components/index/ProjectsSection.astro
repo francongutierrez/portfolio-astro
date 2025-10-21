@@ -1,0 +1,24 @@
+---
+// SOLUCIÓN:
+// 1. Importamos el array con los datos de tus proyectos.
+//    Ajusta la ruta si es necesario.
+import projects from '../../data/projects.js';
+
+// 2. Importamos el componente que renderiza cada tarjeta de proyecto.
+import ProjectCard from './ProjectCard.astro';
+---
+<section id="proyectos" class="section-spacing">
+  <div class="max-w-5xl mx-auto px-8">
+    <h2 class="section-title text-slate-900 dark:text-slate-100">
+      <span class="icon-emoji">💼</span>
+      Proyectos Destacados
+    </h2>
+    <div class="grid sm:grid-cols-2 gap-6">
+      <!-- 
+        Ahora el componente tiene acceso tanto a 'projects' como a 'ProjectCard',
+        por lo que el error desaparecerá.
+      -->
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+  </div>
+</section>

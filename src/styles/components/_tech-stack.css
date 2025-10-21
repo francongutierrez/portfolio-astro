@@ -1,0 +1,27 @@
+ .tech-card {
+    @apply relative overflow-hidden rounded-2xl border p-6 text-center shadow-sm transition-all duration-300;
+
+    /* Estilos para MODO CLARO (por defecto) */
+    @apply bg-white border-slate-200;
+
+    /* Estilos para MODO OSCURO */
+    @apply dark:bg-slate-800/50 dark:border-slate-700;
+  }
+
+  /*
+    Efectos hover que funcionan para ambos modos.
+  */
+  .tech-card:hover {
+    @apply -translate-y-2 scale-[1.02] shadow-md dark:shadow-lg dark:bg-slate-800;
+    border-color: #4f46e5; /* El borde azul se ve bien en ambos temas */
+  }
+
+  .tech-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, transparent, rgba(99, 102, 241, 0.1));
+  }
+
+  .tech-card:hover::before {
+    @apply opacity-100;
+  }

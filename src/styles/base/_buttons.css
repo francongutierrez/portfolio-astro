@@ -1,0 +1,72 @@
+/* Buttons */
+.btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-lg font-semibold shadow-lg transition-all duration-300 ease-in-out;
+
+    /* Estilos MODO CLARO (por defecto) */
+    @apply dark:bg-indigo-600 dark:text-white dark:hover:-translate-y-0.5 dark:hover:bg-indigo-700 dark:hover:shadow-xl;
+    
+    /* Estilos MODO OSCURO */
+    @apply bg-white text-indigo-600 shadow-2xl shadow-black/25 hover:shadow-2xl;
+
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-glass {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+
+
+   .btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #6366f1;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-white-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+  }
+
+  .btn-white-outline:hover {
+    background: white;
+    color: #6366f1;
+  }

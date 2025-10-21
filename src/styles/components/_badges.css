@@ -1,0 +1,18 @@
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .badge-blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+  }
+
+  .badge-purple {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+  }

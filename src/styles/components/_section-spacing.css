@@ -1,0 +1,17 @@
+    /* Section Spacing */
+    .section-spacing {
+        padding: 5rem 0;
+      }
+  
+      .section-title {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-weight: 800;
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+  
+      .icon-emoji {
+        font-size: 2.5rem;
+      }

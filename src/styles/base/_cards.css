@@ -1,0 +1,41 @@
+/* Cards */
+.card-gradient {
+    @apply relative overflow-hidden rounded-2xl border p-10 shadow-sm transition-all duration-300;
+    
+    /* Estilos para MODO CLARO (por defecto) */
+    @apply bg-white border-slate-200;
+
+    /* Estilos para MODO OSCURO */
+    @apply dark:bg-slate-800/50 dark:border-slate-800;
+  }
+
+  .card-gradient:hover {
+    @apply -translate-y-1 shadow-lg dark:shadow-md;
+  }
+
+/* CTA Card */
+.cta-card {
+    @apply relative overflow-hidden rounded-3xl p-16 text-center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .cta-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 70%);
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+ 
+
+  .text-gradient-blue-purple {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
