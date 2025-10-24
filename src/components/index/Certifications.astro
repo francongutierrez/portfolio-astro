@@ -1,7 +1,9 @@
 ---
 import certifications from '../../data/certifications.js';
+// SOLUCIÓN: Importamos el nuevo componente de icono
+import IconArrow from '../icons/IconArrow.astro';
 
-// Dividimos las certificaciones en páginas de 6
+// Dividimos las certificaciones en páginas de 5
 const CERTS_PER_PAGE = 5;
 const totalPages = Math.ceil(certifications.length / CERTS_PER_PAGE);
 const pages = Array.from({ length: totalPages }, (_, i) => 
@@ -17,43 +19,54 @@ const pages = Array.from({ length: totalPages }, (_, i) =>
         Certificaciones y Cursos
       </h2>
       
-      <!-- Botones de navegación (desktop) -->
       <div class="certification-nav hidden sm:flex gap-2">
         <button id="scroll-left" aria-label="Desplazar a la izquierda" class="nav-button">‹</button>
         <button id="scroll-right" aria-label="Desplazar a la derecha" class="nav-button">›</button>
       </div>
     </div>
     
-    <!-- Contenedor del carrusel con páginas -->
     <div id="certifications-slider" class="certifications-container">
       {pages.map((pageCerts, pageIndex) => (
         <div class="certification-page" data-page={pageIndex}>
           <ul class="certification-list">
-            {pageCerts.map(cert => (
-              <li class="certification-item">
-                <a 
-                  href={cert.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="certification-link"
-                >
-                  <div class="certification-content">
-                    <h3 class="certification-title">{cert.title}</h3>
-                    <p class="certification-meta">{cert.issuer} • {cert.year}</p>
-                  </div>
-                  <svg class="certification-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
-                  </svg>
-                </a>
-              </li>
-            ))}
+            {pageCerts.map(cert => {
+              const isValidUrl = cert.link && (cert.link.startsWith('http://') || cert.link.startsWith('https://'));
+              const Tag = isValidUrl ? 'a' : 'div';
+              const tagProps = isValidUrl ? {
+                href: cert.link,
+                target: "_blank",
+                rel: "noopener noreferrer"
+              } : {};
+
+              return (
+                <li class="certification-item">
+                  <Tag 
+                    class:list={["certification-link", { 'no-link': !isValidUrl }]}
+                    {...tagProps}
+                  >
+                    <div class="certification-content">
+                      <h3 class="certification-title">{cert.title}</h3>
+                      <p class="certification-meta">{cert.issuer} • {cert.year}</p>
+                      {!isValidUrl && cert.link && cert.link !== '#' && (
+                        <p class="certification-id">ID de credencial: {cert.link}</p>
+                      )}
+                    </div>
+                    
+                    {/*
+                      SOLUCIÓN:
+                      Reemplazamos todo el bloque <svg> por el componente <IconArrow />.
+                      Esto elimina el error del parser de TypeScript.
+                    */}
+                    {isValidUrl && <IconArrow />}
+                  </Tag>
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}
     </div>
 
-    <!-- Indicadores de página (mobile y desktop) -->
     {totalPages > 1 && (
       <div class="flex justify-center gap-2 mt-4">
         {Array.from({ length: totalPages }).map((_, i) => (
@@ -74,3 +87,22 @@ const pages = Array.from({ length: totalPages }, (_, i) =>
   // Inicializar el slider cuando el DOM esté listo
   initCertificationsSlider();
 </script>
+
+<style>
+  .certification-id {
+    @apply text-xs font-mono mt-1;
+    @apply text-slate-500 dark:text-slate-400;
+  }
+  .certification-link.no-link {
+    cursor: default;
+  }
+  .certification-link.no-link:hover {
+    @apply border-slate-200 dark:border-slate-700 shadow-none !important;
+  }
+  .certification-link.no-link :global(.certification-arrow) {
+    display: none;
+  }
+  .certification-link.no-link:hover :global(.certification-arrow) {
+    @apply opacity-0 translate-x-[-0.5rem] !important;
+  }
+</style>

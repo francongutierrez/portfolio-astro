@@ -1,0 +1,31 @@
+---
+import educationHistory from '../../data/education.js';
+---
+<section id="education" class="section-spacing">
+  <div class="max-w-5xl mx-auto px-8">
+    
+    <h2 class="section-title text-slate-900 dark:text-slate-100">
+      <span class="icon-emoji">🎓</span>
+      Formación Académica
+    </h2>
+
+    <!-- Contenedor del Timeline -->
+    <div class="education-timeline">
+      {educationHistory.map(edu => (
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-dates">{edu.dates}</span>
+            <h3 class="timeline-degree">{edu.degree}</h3>
+            <p class="timeline-university">{edu.university}</p>
+            <p class="timeline-status">{edu.status}</p>
+            {edu.description && (
+              <p class="timeline-description">{edu.description}</p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

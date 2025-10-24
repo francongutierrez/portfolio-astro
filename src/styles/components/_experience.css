@@ -1,4 +1,4 @@
-/* Tarjetas de Experiencia - Consolidada */
+  /* Tarjetas de Experiencia - Consolidada */
   .experience-card {
     @apply p-8 rounded-3xl relative overflow-hidden transition-all duration-300;
     /* Modo Claro */
@@ -28,9 +28,47 @@
     background: linear-gradient(to bottom, #c084fc, #f472b6);
   }
 
+  /* --- SOLUCIÓN: Clases de "glow" añadidas --- */
+  .experience-glow-green {
+    /* Gradiente de verde a teal */
+    background: linear-gradient(to bottom, #4ade80, #2dd4bf); 
+  }
+
+  .experience-glow-pink {
+    /* Gradiente de rosa a rosa más intenso */
+    background: linear-gradient(to bottom, #f472b6, #ec4899);
+  }
+  /* ------------------------------------------- */
+
   .experience-card:hover .experience-glow {
     @apply w-2;
   }
+
+  /* --- SOLUCIÓN: Estilos de Badge añadidos --- */
+  .badge {
+    @apply inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider transition-colors;
+  }
+  
+  .badge-blue {
+    @apply bg-blue-100 text-blue-800;
+    @apply dark:bg-blue-900/50 dark:text-blue-300;
+  }
+  
+  .badge-purple {
+    @apply bg-purple-100 text-purple-800;
+    @apply dark:bg-purple-900/50 dark:text-purple-300;
+  }
+  
+  .badge-green {
+    @apply bg-green-100 text-green-800;
+    @apply dark:bg-green-900/50 dark:text-green-300;
+  }
+  
+  .badge-pink {
+    @apply bg-pink-100 text-pink-800;
+    @apply dark:bg-pink-900/50 dark:text-pink-300;
+  }
+  /* ------------------------------------------- */
 
   .experience-item {
     @apply flex items-start gap-3;

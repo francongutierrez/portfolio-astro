@@ -1,40 +1,45 @@
-<!-- SECCIÓN "EXPERIENCIA" -->
-    <section id="experiencia" class="section-spacing bg-black/5 dark:bg-black/30">
-      <div class="max-w-5xl mx-auto px-8">
-        <h2 class="section-title text-slate-900 dark:text-slate-100">
-          <span class="icon-emoji">📈</span> Experiencia
-        </h2>
-        <div class="space-y-6">
-          <div class="experience-card">
-            <div class="experience-glow experience-glow-blue"></div>
-            <div class="relative">
-              <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
-                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">Analista Funcional & Desarrollador</h3>
-                <span class="badge badge-blue">May 2024 - Actualidad</span>
-              </div>
-              <p class="text-blue-600 dark:text-blue-400 font-bold mb-4 text-lg">PROICO — Entornos Digitales en Contextos de Desarrollo</p>
-              <ul class="space-y-2 text-slate-600 dark:text-slate-300">
-                <li class="experience-item"><span class="bullet-point"></span><span>Desarrollo completo del sitio web institucional utilizando tecnologías modernas</span></li>
-                <li class="experience-item"><span class="bullet-point"></span><span>Implementación y despliegue de la solución en Firebase</span></li>
-                <li class="experience-item"><span class="bullet-point"></span><span>Documentación técnica y funcional del proyecto</span></li>
-              </ul>
+---
+// 1. Importamos los datos de experiencia
+import experienceHistory from '../../data/experience.js';
+---
+<section id="experiencia" class="section-spacing bg-black/5 dark:bg-black/30">
+  <div class="max-w-5xl mx-auto px-8">
+    
+    <h2 class="section-title text-slate-900 dark:text-slate-100">
+      <span class="icon-emoji">📈</span> Experiencia
+    </h2>
+
+    <div class="space-y-6">
+      {/* 2. Hacemos un loop sobre los datos importados */}
+      {experienceHistory.map(exp => (
+        <div class="experience-card">
+          {/* 3. Usamos clases dinámicas para los temas de color */}
+          <div class={`experience-glow experience-glow-${exp.colorTheme}`}></div>
+          <div class="relative">
+            
+            <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
+              <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">{exp.title}</h3>
+              <span class={`badge badge-${exp.colorTheme}`}>{exp.dates}</span>
             </div>
-          </div>
-          <div class="experience-card">
-            <div class="experience-glow experience-glow-purple"></div>
-            <div class="relative">
-              <div class="flex justify-between items-start mb-3 flex-wrap gap-2">
-                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">Desarrollador Web Full Stack</h3>
-                <span class="badge badge-purple">Ago 2024 - Oct 2024</span>
-              </div>
-              <p class="text-purple-500 dark:text-purple-400 font-bold mb-4 text-lg">Sitio Web del Grupo Terra</p>
-              <ul class="space-y-2 text-slate-600 dark:text-slate-300">
-                <li class="experience-item"><span class="bullet-point"></span><span>Desarrollo de aplicación web con CodeIgniter y MySQL</span></li>
-                <li class="experience-item"><span class="bullet-point"></span><span>Relevamiento y análisis de requisitos funcionales con stakeholders</span></li>
-                <li class="experience-item"><span class="bullet-point"></span><span>Diseño e implementación de arquitectura de base de datos</span></li>
-              </ul>
-            </div>
+            
+            <p class={`font-bold mb-4 text-lg text-${exp.colorTheme}-600 dark:text-${exp.colorTheme}-400`}>
+              {exp.company}
+            </p>
+            
+            <ul class="space-y-2 text-slate-600 dark:text-slate-300">
+              {/* 4. Hacemos un loop anidado para los ítems de la descripción */}
+              {exp.descriptionItems.map(item => (
+                <li class="experience-item">
+                  <span class="bullet-point"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
           </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+
+  </div>
+</section>

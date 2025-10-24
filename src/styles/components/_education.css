@@ -1,0 +1,51 @@
+@layer components {
+  /* Contenedor principal del timeline */
+  .education-timeline {
+    @apply relative border-l-2 border-slate-200 dark:border-slate-700 ml-3;
+  }
+
+  /* Cada item en el timeline */
+  .timeline-item {
+    @apply relative mb-8 pl-8; /* Espacio a la izquierda del punto */
+  }
+
+  /* El punto en la línea de tiempo */
+  .timeline-dot {
+    @apply absolute -left-[7px] top-1 w-3 h-3 rounded-full;
+    @apply bg-slate-300 dark:bg-slate-600 border-2 border-white dark:border-slate-800/50;
+  }
+  
+  /* La tarjeta de contenido para cada item */
+  .timeline-content {
+    @apply relative p-6 rounded-lg border;
+    @apply bg-white border-slate-200;
+    @apply dark:bg-slate-800/50 dark:border-slate-700;
+    @apply transition-colors duration-300;
+  }
+
+  .timeline-dates {
+    @apply block text-sm font-semibold mb-2;
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  .timeline-degree {
+    @apply text-lg font-bold;
+    @apply text-slate-900 dark:text-slate-100;
+  }
+
+  .timeline-university {
+    @apply text-base font-medium mb-2;
+    @apply text-slate-600 dark:text-slate-400;
+  }
+  
+  .timeline-status {
+    @apply text-sm italic mb-3;
+    @apply text-slate-500 dark:text-slate-400;
+  }
+
+  .timeline-description {
+    @apply text-sm;
+    @apply text-slate-700 dark:text-slate-300;
+  }
+}
+
