@@ -11,21 +11,23 @@ Este es el repositorio de mi portfolio personal, un sitio web estático construi
 Este proyecto fue construido usando las siguientes tecnologías:
 
 * **[Astro](https://astro.build/)**: El framework web para construir sitios rápidos y con foco en el contenido.
-* **[React](https://reactjs.org/) / [Svelte](https://svelte.dev/) / [Vue](https://vuejs.org/)**: (Opcional: menciona qué frameworks de UI usaste dentro de Astro, si aplica).
-* **[Tailwind CSS](https://tailwindcss.com/)**: (Opcional: si lo usaste para los estilos).
-* **[TypeScript](https://www.typescriptlang.org/)**: (Opcional: si lo usaste).
+* **[Tailwind CSS](https://tailwindcss.com/)**
+* **[TypeScript](https://www.typescriptlang.org/)**
 * **[Vercel](https://vercel.com/)**: Plataforma para el despliegue (deploy) y hosting.
 
 ---
 
-## ✨ Características Principales
+## ✨ Secciones Principales
 
-* **Página de Inicio (Home)**: Una introducción y un resumen de mis habilidades clave.
-* **Sección de Proyectos**: Galería detallada de los proyectos en los que he trabajado, con enlaces a sus demos y repositorios.
-* **Sobre Mí (About)**: Mi trayectoria profesional, mi filosofía de trabajo y mis intereses.
-* **Formulario de Contacto**: (Opcional: si incluiste uno) Un formulario funcional para que los visitantes puedan contactarme.
-* **Blog**: (Opcional: si incluiste uno) Artículos sobre desarrollo, tecnología y mis aprendizajes.
-* **Diseño Responsivo**: Totalmente adaptable a dispositivos móviles y tablets.
+El sitio está estructurado como una *landing page* (página única) que guía al visitante a través de las siguientes secciones:
+
+* **Hero**: Una sección de bienvenida e introducción principal.
+* **Formación**: Detalles sobre mi educación académica, certificaciones y cursos relevantes.
+* **Stack Tecnológico**: Un resumen visual de las tecnologías, lenguajes y herramientas que domino.
+* **Experiencia**: Un recorrido por mi trayectoria laboral y los roles que he desempeñado.
+* **Proyectos**: Una galería destacada de mis trabajos, incluyendo descripciones y enlaces a las demos en vivo y sus repositorios de código.
+* **Contacto**: Un formulario o enlaces directos para ponerse en contacto conmigo.
+* **Diseño Responsivo**: Toda la página es completamente funcional y se adapta perfectamente a dispositivos móviles y tablets.
 
 ---
 
