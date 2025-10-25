@@ -1,0 +1,81 @@
+{
+  "pageTitle": "Franco Gutierrez — Web Developer & Functional Analyst",
+  "pageDescription": "Portfolio of Franco Gutierrez - Web Technician, Functional Analyst, and Developer...",
+
+  "nav": {
+    "mi-history": "My Story",
+    "projects": "Projects",
+    "stack": "Tech Stack",
+    "experience": "Experience",
+    "education": "Education",
+    "certifications": "Courses",
+    "contact": "Contact"
+  },
+  
+  "hero": {
+    "greeting": "Hi, I'm Franco Gutierrez",
+    "title": "Web Developer & Functional Analyst",
+    "subtitle": "From Psychology to Technology: transforming ideas into functional and scalable web solutions",
+    "contactBtn": "Contact Me"
+  },
+  
+  "history": {
+    "title": "My Story",
+    "p1_start": "My professional path began in ",
+    "p1_psychology": "Psychology",
+    "p1_end": ", where I developed skills in analysis, communication, and understanding human needs. However, my true passion was elsewhere: ",
+    "p1_technology": "technology",
+    "p1_dot": ".",
+    "p2": "I decided to make a career change, pursuing the University Technicianship in Web, and discovered my background in Psychology gave me a unique advantage: the ability to understand both users and technical solutions.",
+    "p3_start": "Today, I work as a ",
+    "p3_role": "Functional Analyst and Web Developer",
+    "p3_end": ", acting as the bridge between technical teams and end-users, participating in the entire project lifecycle from requirements gathering to deployment."
+  },
+
+  "stack": {
+    "title": "Tech Stack",
+    "frontend_title": "Frontend",
+    "frontend_desc": "HTML, CSS, JavaScript, Astro, Bootstrap",
+    "backend_title": "Backend",
+    "backend_desc": "PHP, CodeIgniter, Laravel, Java, Python",
+    "database_title": "Databases",
+    "database_desc": "MySQL, Oracle SQL",
+    "tools_title": "Tools",
+    "tools_desc": "Git, Figma, WordPress, WooCommerce"
+  },
+  
+  "projects": {
+    "title": "Featured Projects",
+    "viewButton": "View project"
+  },
+  
+  "experience": {
+    "title": "Experience"
+  },
+
+  "education": {
+    "title": "Education"
+  },
+
+  "certifications": {
+    "title": "Certifications & Courses",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "credentialID": "Credential ID"
+  },
+
+  "contact": {
+    "title": "Let's work together?",
+    "subtitle": "I'm open to new opportunities as a Functional Analyst, Web Developer, or Data Analyst",
+    "githubBtn": "View my GitHub"
+  },
+
+  "footer": {
+    "email": "You can also email me at"
+  },
+  
+  "langSwitcher": {
+    "label": "Change to Spanish",
+    "lang": "ES"
+  }
+}

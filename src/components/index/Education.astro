@@ -1,17 +1,30 @@
 ---
-import educationHistory from '../../data/education.js';
+// 1. Importamos utilidades y datos bilingües
+import { useTranslations } from '../../i18n/utils';
+import allEducation from '../../data/education.js';
+
+// 2. Obtenemos idioma y 't'
+const { currentLocale } = Astro;
+const lang = currentLocale as 'es' | 'en';
+const t = useTranslations(lang);
+
+// 3. Seleccionamos el array de datos correcto
+//    (Usamos 'as any' para evitar el error de TypeScript si persiste)
+const educationHistory = (allEducation as any)[lang] || (allEducation as any).es;
 ---
 <section id="education" class="section-spacing">
   <div class="max-w-5xl mx-auto px-8">
     
     <h2 class="section-title text-slate-900 dark:text-slate-100">
       <span class="icon-emoji">🎓</span>
-      Formación Académica
+      {/* 4. Traducimos el título */}
+      {t('education.title')}
     </h2>
 
     <!-- Contenedor del Timeline -->
     <div class="education-timeline">
-      {educationHistory.map(edu => (
+      {/* 5. Comprobamos si educationHistory es un array antes de mapear */}
+      {educationHistory && Array.isArray(educationHistory) && educationHistory.map(edu => (
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
@@ -19,6 +32,7 @@ import educationHistory from '../../data/education.js';
             <h3 class="timeline-degree">{edu.degree}</h3>
             <p class="timeline-university">{edu.university}</p>
             <p class="timeline-status">{edu.status}</p>
+            {/* Comprobamos si la descripción existe antes de mostrarla */}
             {edu.description && (
               <p class="timeline-description">{edu.description}</p>
             )}
@@ -29,3 +43,4 @@ import educationHistory from '../../data/education.js';
 
   </div>
 </section>
+

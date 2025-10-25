@@ -1,19 +1,36 @@
+---
+// 1. AÑADIMOS ESTAS DOS LÍNEAS
+import { useTranslations } from '../../i18n/utils';
+const t = useTranslations(Astro.currentLocale as 'es' | 'en');
+---
 <!-- SECCIÓN "MI HISTORIA" -->
-    <section class="section-spacing">
-      <div class="max-w-5xl mx-auto px-8">
-        <h2 class="section-title text-slate-900 dark:text-slate-100">
-          <span class="icon-emoji">🚀</span> Mi historia
-        </h2>
-        <div class="card-gradient">
-            <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4 text-lg">
-              Mi camino profesional comenzó en <strong class="text-blue-500 dark:text-blue-400">Psicología</strong>, donde desarrollé habilidades de análisis, comunicación y comprensión de necesidades humanas. Sin embargo, mi verdadera pasión estaba en otro lugar: la <strong class="text-purple-500 dark:text-purple-400">tecnología</strong>.
-            </p>
-            <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4 text-lg">
-              Tomé la decisión de reconvertirme profesionalmente, cursando la Tecnicatura Universitaria en Web, y descubrí que mi background en Psicología me daba una ventaja única: la capacidad de entender tanto a los usuarios como las soluciones técnicas.
-            </p>
-            <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
-              Hoy me desempeño como <strong class="text-gradient-blue-purple">Analista Funcional y Desarrollador Web</strong>, siendo el puente entre equipos técnicos y usuarios finales, participando en todo el ciclo de vida de proyectos desde el relevamiento hasta el deployment.
-            </p>
-        </div>
-      </div>
-    </section>
+<section id="mi-historia" class="section-spacing">
+  <div class="max-w-5xl mx-auto px-8">
+    <h2 class="section-title text-slate-900 dark:text-slate-100">
+      <span class="icon-emoji">🚀</span>
+      <!-- 2. CAMBIAMOS EL TÍTULO -->
+      {t('history.title')}
+    </h2>
+    <div class="card-gradient">
+      <!-- 3. REEMPLAZAMOS EL PÁRRAFO 1 -->
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4 text-lg">
+        {t('history.p1_start')}
+        <strong class="text-blue-500 dark:text-blue-400">{t('history.p1_psychology')}</strong>
+        {t('history.p1_end')}
+        <strong class="text-purple-500 dark:text-purple-400">{t('history.p1_technology')}</strong>
+        {t('history.p1_dot')}
+      </p>
+      <!-- 4. REEMPLAZAMOS EL PÁRRAFO 2 -->
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4 text-lg">
+        {t('history.p2')}
+      </p>
+      <!-- 5. REEMPLAZAMOS EL PÁRRAFO 3 -->
+      <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+        {t('history.p3_start')}
+        <strong class="text-gradient-blue-purple">{t('history.p3_role')}</strong>
+        {t('history.p3_end')}
+      </p>
+    </div>
+  </div>
+</section>
+

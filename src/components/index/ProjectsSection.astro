@@ -1,24 +1,33 @@
 ---
-// SOLUCIÓN:
-// 1. Importamos el array con los datos de tus proyectos.
-//    Ajusta la ruta si es necesario.
-import projects from '../../data/projects.js';
+// 1. Importamos las utilidades de traducción
+import { useTranslations } from '../../i18n/utils';
 
-// 2. Importamos el componente que renderiza cada tarjeta de proyecto.
+// 2. Importamos el OBJETO que contiene AMBOS idiomas
+import allProjects from '../../data/projects.js';
+
+// 3. Importamos el componente de la tarjeta
 import ProjectCard from './ProjectCard.astro';
+
+// 4. Obtenemos el idioma actual y la función 't'
+const { currentLocale } = Astro;
+const lang = currentLocale as 'es' | 'en';
+const t = useTranslations(lang);
+
+// 5. Seleccionamos el ARRAY de proyectos del idioma correcto
+// Si el idioma es 'en', usa allProjects.en. Si es 'es' o cualquier otra cosa, usa allProjects.es
+const projectsToDisplay = allProjects[lang] || allProjects.es;
 ---
 <section id="proyectos" class="section-spacing">
   <div class="max-w-5xl mx-auto px-8">
     <h2 class="section-title text-slate-900 dark:text-slate-100">
       <span class="icon-emoji">💼</span>
-      Proyectos Destacados
+      <!-- 6. Usamos la clave del JSON para el título -->
+      {t('projects.title')}
     </h2>
     <div class="grid sm:grid-cols-2 gap-6">
-      <!-- 
-        Ahora el componente tiene acceso tanto a 'projects' como a 'ProjectCard',
-        por lo que el error desaparecerá.
-      -->
-      {projects.map((project) => <ProjectCard {...project} />)}
+      <!-- 7. Mapeamos sobre el array de proyectos del idioma correcto -->
+      {projectsToDisplay.map((project) => <ProjectCard {...project} />)}
     </div>
   </div>
 </section>
+
