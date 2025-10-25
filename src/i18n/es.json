@@ -1,0 +1,78 @@
+{
+  "pageTitle": "Franco Gutierrez — Desarrollador Web & Analista Funcional",
+  "pageDescription": "Portfolio de Franco Gutierrez - Técnico en Web, Analista Funcional y Desarrollador...",
+
+  "nav": {
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "education": "Formación",
+    "certifications": "Cursos",
+    "contact": "Contacto"
+  },
+  
+  "hero": {
+    "greeting": "Hola, soy Franco Gutierrez",
+    "title": "Desarrollador Web & Analista Funcional",
+    "subtitle": "De la Psicología a la Tecnología: transformando ideas en soluciones web funcionales y escalables",
+    "contactBtn": "Contáctame"
+  },
+  
+  "history": {
+    "title": "Mi historia",
+    "p1_start": "Mi camino profesional comenzó en ",
+    "p1_psychology": "Psicología",
+    "p1_end": ", donde desarrollé habilidades de análisis, comunicación y comprensión de necesidades humanas. Sin embargo, mi verdadera pasión estaba en otro lugar: la ",
+    "p1_technology": "tecnología",
+    "p1_dot": ".",
+    "p2": "Tomé la decisión de reconvertirme profesionalmente, cursando la Tecnicatura Universitaria en Web, y descubrí que mi background en Psicología me daba una ventaja única: la capacidad de entender tanto a los usuarios como las soluciones técnicas.",
+    "p3_start": "Hoy me desempeño como ",
+    "p3_role": "Analista Funcional y Desarrollador Web",
+    "p3_end": ", siendo el puente entre equipos técnicos y usuarios finales, participando en todo el ciclo de vida de proyectos desde el relevamiento hasta el deployment."
+  },
+
+  "stack": {
+    "title": "Stack Tecnológico",
+    "frontend_title": "Frontend",
+    "frontend_desc": "HTML, CSS, JavaScript, Astro, Bootstrap",
+    "backend_title": "Backend",
+    "backend_desc": "PHP, CodeIgniter, Laravel, Java, Python",
+    "database_title": "Bases de Datos",
+    "database_desc": "MySQL, Oracle SQL",
+    "tools_title": "Herramientas",
+    "tools_desc": "Git, Figma, WordPress, WooCommerce"
+  },
+  
+  "projects": {
+    "title": "Proyectos Destacados"
+  },
+  
+  "experience": {
+    "title": "Experiencia"
+  },
+
+  "education": {
+    "title": "Formación Académica"
+  },
+
+  "certifications": {
+    "title": "Certificaciones y Cursos",
+    "showMore": "Mostrar más",
+    "showLess": "Mostrar menos",
+    "credentialID": "ID de credencial"
+  },
+  
+  "contact": {
+    "title": "¿Trabajamos juntos?",
+    "subtitle": "Estoy abierto a nuevas oportunidades como Analista Funcional, Desarrollador Web o Analista de Datos",
+    "githubBtn": "Ver mi GitHub"
+  },
+
+  "footer": {
+    "email": "También podés escribirme a"
+  },
+
+  "langSwitcher": {
+    "label": "Cambiar a Inglés",
+    "lang": "EN"
+  }
+}
