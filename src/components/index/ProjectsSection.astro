@@ -14,6 +14,7 @@ const lang = currentLocale as 'es' | 'en';
 const t = useTranslations(lang);
 
 // 5. Seleccionamos el ARRAY de proyectos del idioma correcto
+// Si el idioma es 'en', usa allProjects.en. Si es 'es' o cualquier otra cosa, usa allProjects.es
 const projectsToDisplay = allProjects[lang] || allProjects.es;
 ---
 <section id="proyectos" class="section-spacing">
@@ -29,3 +30,4 @@ const projectsToDisplay = allProjects[lang] || allProjects.es;
     </div>
   </div>
 </section>
+

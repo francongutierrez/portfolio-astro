@@ -23,17 +23,17 @@ const projects = {
     {
       title: "PROICO: Digital Environments in Development Contexts",
       description: "Development of the research project's website; deployment on Firebase and interface design.",
-      link: "#"
+      link: "https://proicoentornosdigitales.web.app/"
     },
     {
       title: "Terra Group Website",
       description: "Official radio station site developed with CodeIgniter and MySQL — requirements analysis and deployment.",
-      link: "#"
+      link: "http://www.grupoterrasanluis.com.ar"
     },
     {
       title: "ACIACAM - Landing Page",
       description: "Landing page in progress for ACIACAM (information and contact).",
-      link: "#"
+      link: "http://aciacam.or"
     }
   ]
 };

@@ -3,7 +3,9 @@
   "pageDescription": "Portfolio of Franco Gutierrez - Web Technician, Functional Analyst, and Developer...",
 
   "nav": {
+    "mi-history": "My Story",
     "projects": "Projects",
+    "stack": "Tech Stack",
     "experience": "Experience",
     "education": "Education",
     "certifications": "Courses",
@@ -43,7 +45,8 @@
   },
   
   "projects": {
-    "title": "Featured Projects"
+    "title": "Featured Projects",
+    "viewButton": "View project"
   },
   
   "experience": {

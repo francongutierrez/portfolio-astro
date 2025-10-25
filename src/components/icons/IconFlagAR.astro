@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid slice">
+  <rect width="24" height="24" fill="transparent"/> {/* Base transparente para el clipping */}
+  <g clip-path="url(#circle-mask)">
+    {/* Franjas y sol ajustados para centrarse en un viewBox 24x24 */}
+    <rect x="0" y="0" width="24" height="8" fill="#75AADB"/>
+    <rect x="0" y="8" width="24" height="8" fill="#fff"/>
+    <rect x="0" y="16" width="24" height="8" fill="#75AADB"/>
+    <circle cx="12" cy="12" r="2.5" fill="#F9D616"/>
+    <circle cx="12" cy="12" r="1.5" fill="#fff"/>
+    <path d="M12 12 L 13.5 10.5 M12 12 L 14 12 M12 12 L 13.5 13.5 M12 12 L 12 14 M12 12 L 10.5 13.5 M12 12 L 10 12 M12 12 L 10.5 10.5 M12 12 L 12 10" stroke="#F9D616" stroke-width="0.3"/>
+  </g>
+  <defs>
+    <clipPath id="circle-mask">
+      <circle cx="12" cy="12" r="12"/>
+    </clipPath>
+  </defs>
+</svg>

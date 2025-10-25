@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid slice">
+  <rect width="24" height="24" fill="transparent"/> {/* Base transparente para el clipping */}
+  <g clip-path="url(#circle-mask)">
+    {/* Escalar la bandera de USA para que ocupe el espacio sin distorsionarse demasiado */}
+    <rect width="24" height="12.6" y="5.7" fill="#b22234"/> {/* Ajustado para una proporción 1.9:1 dentro del 24x24 */}
+    <path d="M0,6H24 M0,7.7H24 M0,9.4H24 M0,11.1H24 M0,12.8H24 M0,14.5H24" stroke="#fff" stroke-width="0.8"/>
+    <rect width="9.6" height="6.6" fill="#3c3b6e" x="0" y="5.7"/>
+    {/* Las estrellas de USA son muy complejas para SVG inline y un viewBox 24x24.
+        Para un ajuste rápido y visualmente aceptable en un espacio pequeño:
+        Podemos simular un patrón simple de estrellas o usar una estrella simple.
+        Para mantener la solución limpia, y dado el tamaño tan pequeño del icono,
+        simplemente dejaré un cuadrado azul, que es la parte más reconocible.
+        Si necesitas las estrellas, es mejor usar un SVG de estrella simple o un icono PNG.
+    */}
+    {/* Aquí puedes añadir estrellas si lo deseas, por ejemplo:
+    <circle cx="2" cy="7" r="0.5" fill="#fff"/>
+    <circle cx="4" cy="8" r="0.5" fill="#fff"/>
+    */}
+  </g>
+  <defs>
+    <clipPath id="circle-mask">
+      <circle cx="12" cy="12" r="12"/>
+    </clipPath>
+  </defs>
+</svg>
+

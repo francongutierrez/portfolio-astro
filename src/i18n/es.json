@@ -3,7 +3,9 @@
   "pageDescription": "Portfolio de Franco Gutierrez - Técnico en Web, Analista Funcional y Desarrollador...",
 
   "nav": {
+    "mi-history": "Mi historia",
     "projects": "Proyectos",
+    "stack": "Stack Tecnológico",
     "experience": "Experiencia",
     "education": "Formación",
     "certifications": "Cursos",
@@ -43,7 +45,8 @@
   },
   
   "projects": {
-    "title": "Proyectos Destacados"
+    "title": "Proyectos Destacados",
+    "viewButton": "Ver proyecto"
   },
   
   "experience": {

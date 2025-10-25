@@ -1,19 +1,32 @@
 ---
-// 1. Importamos los datos de experiencia
-import experienceHistory from '../../data/experience.js';
+// 1. Importamos las utilidades de traducción
+import { useTranslations } from '../../i18n/utils';
+
+// 2. Importamos el OBJETO que contiene AMBOS idiomas
+import allExperience from '../../data/experience.js';
+
+// 3. Obtenemos el idioma actual y la función 't'
+const { currentLocale } = Astro;
+const lang = currentLocale as 'es' | 'en';
+const t = useTranslations(lang);
+
+// 4. Seleccionamos el ARRAY de experiencia del idioma correcto
+//    (Usamos 'as any' para evitar el error de TypeScript si persiste)
+const experienceHistory = (allExperience as any)[lang] || (allExperience as any).es;
 ---
 <section id="experiencia" class="section-spacing bg-black/5 dark:bg-black/30">
   <div class="max-w-5xl mx-auto px-8">
     
     <h2 class="section-title text-slate-900 dark:text-slate-100">
-      <span class="icon-emoji">📈</span> Experiencia
+      <span class="icon-emoji">📈</span> 
+      {/* 5. Traducimos el título */}
+      {t('experience.title')}
     </h2>
 
     <div class="space-y-6">
-      {/* 2. Hacemos un loop sobre los datos importados */}
-      {experienceHistory.map(exp => (
+      {/* 6. Comprobamos si experienceHistory es un array antes de mapear */}
+      {experienceHistory && Array.isArray(experienceHistory) && experienceHistory.map(exp => (
         <div class="experience-card">
-          {/* 3. Usamos clases dinámicas para los temas de color */}
           <div class={`experience-glow experience-glow-${exp.colorTheme}`}></div>
           <div class="relative">
             
@@ -27,8 +40,8 @@ import experienceHistory from '../../data/experience.js';
             </p>
             
             <ul class="space-y-2 text-slate-600 dark:text-slate-300">
-              {/* 4. Hacemos un loop anidado para los ítems de la descripción */}
-              {exp.descriptionItems.map(item => (
+              {/* Comprobamos si descriptionItems es un array antes de mapear */}
+              {exp.descriptionItems && Array.isArray(exp.descriptionItems) && exp.descriptionItems.map(item => (
                 <li class="experience-item">
                   <span class="bullet-point"></span>
                   <span>{item}</span>
@@ -43,3 +56,4 @@ import experienceHistory from '../../data/experience.js';
 
   </div>
 </section>
+

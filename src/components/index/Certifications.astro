@@ -1,9 +1,19 @@
 ---
-import certifications from '../../data/certifications.js';
-// SOLUCIÓN: Importamos el nuevo componente de icono
+// 1. Importar utilidades y el componente de icono
+import { useTranslations } from '../../i18n/utils';
+import allCertifications from '../../data/certifications.js'; // Importar el OBJETO
 import IconArrow from '../icons/IconArrow.astro';
 
-// Dividimos las certificaciones en páginas de 5
+// 2. Obtener idioma y función 't'
+const { currentLocale } = Astro;
+const lang = currentLocale as 'es' | 'en';
+const t = useTranslations(lang);
+
+// 3. Seleccionar el array de datos del idioma correcto
+// SOLUCIÓN: Usamos '(as any)' para solucionar el error de TypeScript
+const certifications = (allCertifications as any)[lang] || (allCertifications as any).es;
+
+// 4. Lógica de paginación
 const CERTS_PER_PAGE = 5;
 const totalPages = Math.ceil(certifications.length / CERTS_PER_PAGE);
 const pages = Array.from({ length: totalPages }, (_, i) => 
@@ -16,12 +26,13 @@ const pages = Array.from({ length: totalPages }, (_, i) =>
     <div class="flex justify-between items-center mb-6">
       <h2 class="section-title text-slate-900 dark:text-slate-100 mb-0">
         <span class="icon-emoji">📜</span>
-        Certificaciones y Cursos
+        {t('certifications.title')} <!-- Corregido: Comentario fuera de la etiqueta -->
       </h2>
       
       <div class="certification-nav hidden sm:flex gap-2">
-        <button id="scroll-left" aria-label="Desplazar a la izquierda" class="nav-button">‹</button>
-        <button id="scroll-right" aria-label="Desplazar a la derecha" class="nav-button">›</button>
+        <!-- Corregido: Comentarios eliminados de dentro de las etiquetas -->
+        <button id="scroll-left" aria-label={t('certifications.scrollLeft')} class="nav-button">‹</button>
+        <button id="scroll-right" aria-label={t('certifications.scrollRight')} class="nav-button">›</button>
       </div>
     </div>
     
@@ -48,15 +59,11 @@ const pages = Array.from({ length: totalPages }, (_, i) =>
                       <h3 class="certification-title">{cert.title}</h3>
                       <p class="certification-meta">{cert.issuer} • {cert.year}</p>
                       {!isValidUrl && cert.link && cert.link !== '#' && (
-                        <p class="certification-id">ID de credencial: {cert.link}</p>
+                        <!-- Corregido: Comentario eliminado de dentro de la etiqueta -->
+                        <p class="certification-id">{t('certifications.credentialID')}: {cert.link}</p>
                       )}
                     </div>
                     
-                    {/*
-                      SOLUCIÓN:
-                      Reemplazamos todo el bloque <svg> por el componente <IconArrow />.
-                      Esto elimina el error del parser de TypeScript.
-                    */}
                     {isValidUrl && <IconArrow />}
                   </Tag>
                 </li>
@@ -73,7 +80,7 @@ const pages = Array.from({ length: totalPages }, (_, i) =>
           <button 
             class="page-indicator" 
             data-page-index={i}
-            aria-label={`Ir a página ${i + 1}`}
+            aria-label={`${t('certifications.goToPage')} ${i + 1}`}
           />
         ))}
       </div>
@@ -106,3 +113,4 @@ const pages = Array.from({ length: totalPages }, (_, i) =>
     @apply opacity-0 translate-x-[-0.5rem] !important;
   }
 </style>
+
